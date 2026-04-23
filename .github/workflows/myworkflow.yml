@@ -4,8 +4,13 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-jobs:  build:
+jobs:  
+  default:
+    working-directory: backend
+  build:
     runs-on: ubuntu-latest
+    default:
+      working-directory: backend
     steps:
     - uses: actions/checkout@v2 
     - name: Set up Node.js

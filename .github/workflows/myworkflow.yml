@@ -12,7 +12,9 @@ jobs:
       - name: Build the project
         run: echo "Building the project..."
       - name: clone
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+      - name: set up node
+        uses: actions/setup-node@v4 
       - name: install dependencies
         run: npm ci
       - name: test 

@@ -4,13 +4,14 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-jobs:  
+jobs:
   build:
     runs-on: ubuntu-latest
-      default:
+    defaults:
+      run:
         working-directory: backend
-      steps:
-      - uses: actions/checkout@v2 
+    steps:
+      - uses: actions/checkout@v2
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
@@ -18,6 +19,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build
-        run: npm run build  
+        run: npm run build
       - name: Run tests
         run: npm test
